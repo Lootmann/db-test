@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:14
+    container_name: test-psql
+
+    ports:
+      - published: 5432
+        target: 5432
+
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+    volumes:
+      - type: volume
+        source: data
+        target: /var/lib/postgresql/data
+
+      - type: bind
+        source: ./init
+        target: /docker-entrypoint-initdb.d
+
+volumes:
+  data:
+    name: sqlbolt
