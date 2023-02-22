@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS movies
   PRIMARY KEY (id)
 );
 
-
 INSERT INTO movies (title, director, year, length_minutes) VALUES ('Toy Story', 'John Lasseter', 1995, 81);
 INSERT INTO movies (title, director, year, length_minutes) VALUES ('A Bug''s Life', 'John Lasseter', 1998, 95);
 INSERT INTO movies (title, director, year, length_minutes) VALUES ('Toy Story 2', 'John Lasseter', 1999, 93);
