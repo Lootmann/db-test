@@ -10,14 +10,12 @@ def main():
     lines = load_text()
 
     format_string = (
-        "INSERT INTO movies (movie_id, rating, domestic_sales, international_sales)"
-        + "VALUES ({:d}, {:f}, {:d}, {:d});"
+        "INSERT INTO movies (building_name, capacity) "
+        + "VALUES ({:s}, {:s}, {:s}, {:d});"
     )
 
     for line in lines:
-        res = format_string.format(
-            int(line[0]), float(line[1]), int(line[2]), int(line[3])
-        )
+        res = format_string.format(line[0], line[1], line[2], int(line[3]))
         print(res)
 
 
